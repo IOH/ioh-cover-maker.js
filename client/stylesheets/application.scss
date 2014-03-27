@@ -21,61 +21,68 @@ body {
   left: $left;
 }
 
-#preview-container {
-  padding: 30px;
-  margin-bottom: 10px;
-  background-image: url('/index/bg.png');
-  background-repeat: no-repeat;
-  background-position: center;
 
-  #preview {
-    @include size(960px, 540px);
-    @include center-block();
-    position: relative;
+#index {
+  #preview-container {
+    padding: 30px;
+    margin-bottom: 10px;
+    background-image: url('/index/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
 
-    @font-face {
+    #preview {
+      @include size(960px, 540px);
+      @include center-block();
+      position: relative;
+
+      @font-face {
+        font-family: AdobeFanHeitiStd;
+        src:url('/AdobeFanHeitiStd-Bold.otf');
+      }
       font-family: AdobeFanHeitiStd;
-      src:url('/AdobeFanHeitiStd-Bold.otf');
+
+      * > { overflow: hidden; }
+      $content-text-height: 430px;
+      #content-text { height: $content-text-height; position: relative; }
+      #content-header { @include stretch($content-text-height, 0, 0, 0); }
     }
-    font-family: AdobeFanHeitiStd;
-
-    * > { overflow: hidden; }
-    $content-text-height: 430px;
-    #content-text { height: $content-text-height; position: relative; }
-    #content-header { @include stretch($content-text-height, 0, 0, 0); }
-  }
-}
-
-#content-text > .text-left {
-  @include stretch(auto, 30px, 0, 0);
-
-  > :first-child {
-    @include stretch(auto, 180px, 38px, auto);
-    padding: 10px;
-    margin-bottom: 0;
-    width: 310px;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 17px;
   }
 
-  > img {
-    @include stretch(auto, 0, 37px, auto);
+  .avatar {
     @include square(160px);
     padding: 5px;
-    background-color: white;
   }
 
-  > :last-child {
-    @include stretch(auto, 0, 0, auto);
-    font-size: 12px;
+  #content-text > .text-left {
+    @include stretch(auto, 30px, 0, 0);
+
+    > :first-child {
+      @include stretch(auto, 180px, 38px, auto);
+      padding: 10px;
+      margin-bottom: 0;
+      width: 310px;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 17px;
+    }
+
+    > img {
+      @include stretch(auto, 0, 37px, auto);
+      background-color: white;
+    }
+
+    > :last-child {
+      @include stretch(auto, 0, 0, auto);
+      font-size: 12px;
+    }
+  }
+
+  #content-header > .text-right {
+    @include stretch(11px, 29px, auto, auto);
+    > :nth-child(3) { color: #ff0604; }
   }
 }
 
-#content-header > .text-right {
-  @include stretch(11px, 29px, auto, auto);
-  > :nth-child(3) { color: #ff0604; }
-}
 
 
 
