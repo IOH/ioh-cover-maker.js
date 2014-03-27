@@ -53,7 +53,7 @@ test.mocha: install
 
 test: $(testDeps)
 
-release: install
+release: clean install
 	NODE_ENV=production $(gulp) --gulpfile ./client/gulpfile.ls client
 
 ifeq (true, $(releaseStatic))
