@@ -7,8 +7,76 @@
       li 存檔後寄給工作人員!
 
   .row
+    .col-xs-12
+      #preview-container
+        #preview
+          #content-text
+            .text-left
+              p(ng-bind="page.brief")
+              img.avatar(ng-src="{{ page.avatar }}")
+              p
+                | 地點 : 
+                span(ng-bind="page.location")
+                
+          #content-header
+            img.img-responsive(src="/index/ioh_brand.png" alt="")
+            .text-right
+              span(ng-bind="page.name")
+              br
+              span(ng-bind="page.exprs[0]")
+              br
+              span(ng-bind="page.exprs[1]")
+              br
+              span(ng-bind="page.exprs[2]")
+  .row
     .col-xs-6
       form(role="form")
         .form-group
+          p 大頭照
+          .btn-group
+            button.btn.btn-default(type="button" ng-click="page.useAvatar = false") 不使用
+            button.btn.btn-default(type="button" ng-click="page.useAvatar = !page.useAvatar") 使用
+        .form-group
+          p 地點文字顏色
+          .btn-group
+            button.btn.btn-default(type="button") 白色
+            button.btn.btn-default(type="button") 黑色
+        .form-group
           label 姓名
-          input.form-control(type="text" ng-model="name")
+          input.form-control(type="text" ng-model="page.name" required)
+        .form-group
+          label 經歷1 (紅字)
+          input.form-control(type="text" ng-model="page.exprs[0]" required)
+        .form-group
+          label 經歷2
+          input.form-control(type="text" ng-model="page.exprs[1]" required)
+        .form-group
+          label 經歷3
+          input.form-control(type="text" ng-model="page.exprs[2]" required)
+        .form-group
+          label 地點
+          input.form-control(type="text" ng-model="page.location" required)
+        .form-group
+          label 簡介
+          textarea.form-control(rows="5" ng-model="page.brief" required)
+
+        button.btn.btn-primary(type="submit") 存檔
+
+    .col-xs-6
+      .well
+        form(role="form")
+          .form-group
+            label(for="") 底圖
+            input(type="file" required)
+          button.btn.btn-default(type="submit") 上傳
+        img(ng-src="{{ page.cover }}" alt="")
+
+      .well(ng-show="page.useAvatar")
+        form.form-inline(role="form")
+          .form-group
+            label(for="") 大頭照（請先裁切成 1:1 ）
+            input(type="file" required)
+          button.btn.btn-default(type="submit") 上傳
+        img.avatar(ng-src="{{ page.avatar }}" alt="")
+
+
