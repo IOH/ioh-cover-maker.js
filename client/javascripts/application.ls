@@ -45,6 +45,8 @@ angular.module 'ioh-cover-maker' <[
         'MIT Media Lab, Master of Science Media Arts and Science 碩士, 20xx'
         'MIT Media Lab, Master of Science Media Arts and Science 碩士, 20xx'
       ]
+      useColor: 'black'
+      useAvatar: true
     }
 
 

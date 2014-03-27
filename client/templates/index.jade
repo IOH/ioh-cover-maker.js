@@ -14,9 +14,9 @@
             .text-left
               p(ng-bind="page.brief")
               img.avatar(ng-show="page.useAvatar" ng-src="{{ page.avatar }}")
-              p
+              p(ng-style="{'color':page.useColor}")
                 | 地點 : 
-                span(ng-bind="page.location")
+                span(ng-bind="page.location" ng-style="{'color':page.useColor}")
                 
           #content-header
             img.img-responsive(src="/index/ioh_brand.png" alt="")
@@ -37,10 +37,10 @@
             button.btn.btn-default(type="button" name="avatar"  ng-model="page.useAvatar" btn-radio="false") 不使用
             button.btn.btn-default(type="button" name="avatar"  ng-model="page.useAvatar" btn-radio="true" ) 使用
         .form-group
-          p(ng-style="font-color") 地點文字顏色
+          p 地點文字顏色
           .btn-group
-            button.btn.btn-default(type="button" ng-model="page.useColor " btn-radio="false") 白色
-            button.btn.btn-default(type="button" ng-model="page.useColor " btn-radio="true") 黑色
+            button.btn.btn-default(type="button" ng-model="page.useColor" btn-radio="'white'") 白色
+            button.btn.btn-default(type="button" ng-model="page.useColor" btn-radio="'black'") 黑色
         .form-group
           label 姓名
           input.form-control(type="text" ng-model="page.name" required)
