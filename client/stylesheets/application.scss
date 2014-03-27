@@ -1,0 +1,51 @@
+$icon-font-path: 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/';
+
+@import "bootstrap";
+@import "footer";
+/*
+ * app
+ */
+body {
+  padding-top: 70px;
+
+  > header {
+    #gravatar {
+      margin-top: -8px;
+      margin-bottom: -8px;
+      @include square(36px);
+    }
+  }
+}
+
+#index {
+  .pkg-name {
+    padding: 0 .5em 0 .5em;
+  }
+
+  #vice_versa {
+    margin-left: 1em;
+  }
+}
+
+#mappings_list {
+  .panel-heading, .panel-footer {
+    a { margin: 0 .5em; }
+  }
+
+  %actor {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .commenter {
+    @extend %actor;
+    p { margin-top: 10px; }
+    .media-list {
+      margin-top: 10px;
+    }
+  }
+
+  .searcher {
+    @extend %actor;
+  }
+}
