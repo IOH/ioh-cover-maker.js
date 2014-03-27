@@ -13,7 +13,7 @@
           #content-text
             .text-left
               p(ng-bind="page.brief")
-              img.avatar(ng-src="{{ page.avatar }}")
+              img.avatar(ng-show="page.useAvatar" ng-src="{{ page.avatar }}")
               p
                 | 地點 : 
                 span(ng-bind="page.location")
@@ -33,14 +33,14 @@
       form(role="form")
         .form-group
           p 大頭照
-          .btn-group
-            button.btn.btn-default(type="button" ng-click="page.useAvatar = false") 不使用
-            button.btn.btn-default(type="button" ng-click="page.useAvatar = !page.useAvatar") 使用
+          .btn-group(data-toggle="buttons")
+            button.btn.btn-default(type="button" name="avatar"  ng-model="page.useAvatar" btn-radio="false") 不使用
+            button.btn.btn-default(type="button" name="avatar"  ng-model="page.useAvatar" btn-radio="true" ) 使用
         .form-group
-          p 地點文字顏色
+          p(ng-style="font-color") 地點文字顏色
           .btn-group
-            button.btn.btn-default(type="button") 白色
-            button.btn.btn-default(type="button") 黑色
+            button.btn.btn-default(type="button" ng-model="page.useColor " btn-radio="false") 白色
+            button.btn.btn-default(type="button" ng-model="page.useColor " btn-radio="true") 黑色
         .form-group
           label 姓名
           input.form-control(type="text" ng-model="page.name" required)
