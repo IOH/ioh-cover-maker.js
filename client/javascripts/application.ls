@@ -18,6 +18,16 @@ angular.module 'ioh-cover-maker' <[
     templateUrl: '/index.html'
     controller: 'IndexCtrl as index'
 
+  .state 'Poster' do
+    url: '/posters'
+    abstract: true
+    template: '<ui-view/>'
+
+  .state 'Poster.Show' do
+    url: '/:id'
+    templateUrl: '/posters/show.html'
+    controller: 'ShowPosterCtrl'
+
   $locationProvider.html5Mode true
 
 .run <[
@@ -80,7 +90,13 @@ angular.module 'ioh-cover-maker' <[
     @$scope.$emit 'success' key, it
 
   @$inject = <[
-     $scope  Index ]>
+     $scope   Index ]>
   !(@$scope, @Index) ->
 
+.controller 'ShowPosterCtrl' class
 
+  @$inject = <[
+     $scope   $stateParams   Poster ]>
+  !(@$scope, @$stateParams, @Poster) ->
+
+    $scope.poster = Poster.get posterId: $stateParams.id

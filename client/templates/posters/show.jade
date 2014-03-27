@@ -1,0 +1,20 @@
+#preview-container
+  #preview(html2url="preview")
+    #content-text(ng-style="{'background-image': 'url(' + poster.cover + ')'}")
+      .text-left
+        p(ng-bind="poster.brief")
+        img.avatar(ng-show="poster.useAvatar" ng-src="{{ poster.avatar }}")
+        p(ng-style="{'color':poster.useColor}")
+          | 地點 : 
+          span(ng-bind="poster.location" ng-style="{'color':poster.useColor}")
+          
+    #content-header
+      img.img-responsive(src="/index/ioh_brand.png" alt="")
+      .text-right
+        span(ng-bind="poster.name")
+        br
+        span(ng-bind="poster.exprs[0]")
+        br
+        span(ng-bind="poster.exprs[1]")
+        br
+        span(ng-bind="poster.exprs[2]")

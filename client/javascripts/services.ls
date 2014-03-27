@@ -20,10 +20,15 @@ angular.module 'ioh-cover-maker.services' <[
       response
 
 .factory 'Poster' <[
-       $resource
-]> ++ ($resource) ->
+       $resource  $window
+]> ++ ($resource, $window) ->
 
-  $resource '/api/posters/:posterId' {posterId: '@id'}
+  const Poster = $resource '/api/posters/:posterId' {posterId: '@id'}
+
+  Poster::fullUrl = ->
+    "#{ $window.location.origin }/posters/#{ @id }"
+
+  Poster
 
 .factory 'Index' <[
        $http

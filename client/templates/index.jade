@@ -1,4 +1,4 @@
-#index.container
+.container
   .well
     h2 操作說明
     ol
@@ -7,27 +7,8 @@
       li 存檔後寄給工作人員!
 
   .row
-    .col-xs-12
-      #preview-container
-        #preview(html2url="preview")
-          #content-text(ng-style="{'background-image': 'url(' + poster.cover + ')'}")
-            .text-left
-              p(ng-bind="poster.brief")
-              img.avatar(ng-show="poster.useAvatar" ng-src="{{ poster.avatar }}")
-              p(ng-style="{'color':poster.useColor}")
-                | 地點 : 
-                span(ng-bind="poster.location" ng-style="{'color':poster.useColor}")
-                
-          #content-header
-            img.img-responsive(src="/index/ioh_brand.png" alt="")
-            .text-right
-              span(ng-bind="poster.name")
-              br
-              span(ng-bind="poster.exprs[0]")
-              br
-              span(ng-bind="poster.exprs[1]")
-              br
-              span(ng-bind="poster.exprs[2]")
+    .col-xs-12(ng-include="'/posters/show.html'")
+
   .row
     .col-xs-6
       form(role="form" ng-submit="index.save()")
@@ -62,6 +43,9 @@
 
         //- button.btn.btn-default(ng-click="render($event)") Render
         button.btn.btn-primary(type="submit") 存檔
+        label(ng-show="poster.id")
+          | 海報網址： 
+          a(target="_blank" ng-href="{{ poster.fullUrl() }}" ng-bind="poster.fullUrl()")
         //- img(ng-src="{{ renderedUrl }}")
 
     .col-xs-6
@@ -82,4 +66,6 @@
         .thumbnail(ng-show="poster.useAvatar")
           img.avatar(ng-src="{{ poster.avatar }}" alt="")
 
-
+  .row
+    iframe(src="https://docs.google.com/forms/d/1jDXnLJ5Y2WOG-JIbNCqt-ovmoyt_Sqg6ptDltqoCxn4/viewform?embedded=true"
+      width="900" height="800" frameborder="0" marginheight="0" marginwidth="0")

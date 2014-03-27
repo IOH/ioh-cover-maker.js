@@ -5,6 +5,9 @@ require! {
 exports.list = !(req, res) ->
   res.json results: Poster.findAll!
 
+exports.show = !(req, res) ->
+  res.json result: Poster.find req.params.id
+
 exports.create = !(req, res) ->
   res.json result: Poster.create req.body
 
