@@ -19,7 +19,7 @@ module.exports = ->
   server.use express.static './public'
   server.use express.static './tmp/public'
 
-  server.use !(req, res) -> res.render 'index.jade' res.bootstraping
+  server.use !(req, res) -> res.render 'index.jade'
 
   const deferred = Q.defer!
 
