@@ -1,6 +1,7 @@
 require! {
   gulp
   Q: q
+  mkdirp
   express
 }
 require! {
@@ -9,6 +10,12 @@ require! {
   './config/routes'
   './config/sequelize'
 }
+
+function setup
+  Q.all [
+    database!
+    Q.nfcall mkdirp, './tmp/public/uploads'
+  ]
 
 function database
   sequelize
@@ -30,13 +37,13 @@ else
   []
 
 gulp.task 'server' serverTaskDependencies, !->
-  <- database!then
+  <- setup!then
   server.use server.router
 
   server.use require('connect-livereload')! unless config.env.is 'production'
 
   server.use express.static './public'
-  server.use express.static './tmp/public' unless config.env.is 'production'
+  server.use express.static './tmp/public'
 
   server.use !(req, res) -> res.render 'index.jade' res.bootstraping
 

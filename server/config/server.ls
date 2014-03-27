@@ -9,8 +9,7 @@ module.exports = express!
 
 
   ..use express.cookieParser!
-  ..use express.urlencoded!
-  ..use express.json!
+  ..use express.bodyParser!
   ..use express.methodOverride!
   ..use express.session secret: 'keyboard cat'
 

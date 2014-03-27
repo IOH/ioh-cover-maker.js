@@ -25,6 +25,14 @@ angular.module 'ioh-cover-maker.services' <[
 
   $resource 'pages/:pagesId' {pagesId: '@id'}
 
+.factory 'Index' <[
+       $http
+]> ++ ($http) ->
+
+  upload: ->
+    $http.post '/api/upload', it .then ({data}) -> data
+
+
 .factory 'Gems' <[
        $http
 ]> ++ ($http) ->

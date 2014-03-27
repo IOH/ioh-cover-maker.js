@@ -1,4 +1,4 @@
-#index.container-fluid
+#index.container
   .well
     h2 操作說明
     ol
@@ -9,8 +9,8 @@
   .row
     .col-xs-12
       #preview-container
-        #preview
-          #content-text
+        #preview(html2url="preview")
+          #content-text(ng-style="{'background-image': 'url(' + page.cover + ')'}")
             .text-left
               p(ng-bind="page.brief")
               img.avatar(ng-show="page.useAvatar" ng-src="{{ page.avatar }}")
@@ -60,23 +60,27 @@
           label 簡介
           textarea.form-control(rows="5" ng-model="page.brief" required)
 
+        //- button.btn.btn-default(ng-click="render($event)") Render
         button.btn.btn-primary(type="submit") 存檔
+
+        img(ng-src="{{ renderedUrl }}")
 
     .col-xs-6
       .well
-        form(role="form")
+        form.form-inline(role="form" ng-controller="ImageUploadCtrl as imgup" ng-submit="imgup.upload('cover')")
           .form-group
             label(for="") 底圖
-            input(type="file" required)
+            input(type="file" ng-model="newImage.file" required)
           button.btn.btn-default(type="submit") 上傳
-        img(ng-src="{{ page.cover }}" alt="")
+        .thumbnail
+          img.cover(ng-src="{{ page.cover }}" alt="")
 
-      .well(ng-show="page.useAvatar")
-        form.form-inline(role="form")
+        form.form-inline(role="form" ng-show="page.useAvatar" ng-controller="ImageUploadCtrl as imgup" ng-submit="imgup.upload('avatar')")
           .form-group
             label(for="") 大頭照（請先裁切成 1:1 ）
-            input(type="file" required)
+            input(type="file" ng-model="newImage.file" required)
           button.btn.btn-default(type="submit") 上傳
-        img.avatar(ng-src="{{ page.avatar }}" alt="")
+        .thumbnail(ng-show="page.useAvatar")
+          img.avatar(ng-src="{{ page.avatar }}" alt="")
 
 
