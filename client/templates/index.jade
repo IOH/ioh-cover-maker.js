@@ -25,5 +25,30 @@
     .col-xs-6
       form(role="form")
         .form-group
+          p 大頭照
+          .btn-group
+            button.btn.btn-default(type="button") 不使用
+            button.btn.btn-default(type="button") 使用
+        .form-group
+          p 地點文字顏色
+          .btn-group
+            button.btn.btn-default(type="button") 白色
+            button.btn.btn-default(type="button") 黑色
+        .form-group
           label 姓名
           input.form-control(type="text" ng-model="page.name")
+        .form-group
+          label 經歷1 (紅字)
+          input.form-control(type="text" ng-model="page.exprs[0]")
+        .form-group
+          label 經歷2
+          input.form-control(type="text" ng-model="page.exprs[1]")
+        .form-group
+          label 經歷3
+          input.form-control(type="text" ng-model="page.exprs[2]")
+        .form-group
+          label 地點
+          input.form-control(type="text" placeholder="ex MIT Media Lab")
+        .form-group
+          label 簡介
+          textarea.form-control#forbrief( rows="3")
