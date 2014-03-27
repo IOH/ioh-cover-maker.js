@@ -1,5 +1,5 @@
 #preview-container
-  #preview(html2url="preview")
+  #preview(ng-class="{'scale-active': !rendering}" html2url="preview")
     #content-text(ng-style="{'background-image': 'url(' + poster.cover + ')'}")
       .text-left
         p(ng-bind="poster.brief")

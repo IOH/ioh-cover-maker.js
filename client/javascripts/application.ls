@@ -79,9 +79,11 @@ angular.module 'ioh-cover-maker' <[
     $scope.$on 'success' !(event, key, image) ->
       $scope.poster[key] = image
 
-    # $scope.render = !->
-    #   <-! $scope.preview.render!then
-    #   $scope.renderedUrl = it
+    $scope.render = !->
+      $scope.rendering = true
+      <-! $scope.preview.render!then
+      $scope.renderedUrl = it
+      $scope.rendering = false
 
 .controller 'ImageUploadCtrl' class
 
