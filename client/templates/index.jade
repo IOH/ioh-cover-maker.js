@@ -30,10 +30,10 @@
           input.form-control(type="text" ng-model="poster.exprs[0]" required)
         .form-group
           label 經歷2
-          input.form-control(type="text" ng-model="poster.exprs[1]" required)
+          input.form-control(type="text" ng-model="poster.exprs[1]")
         .form-group
           label 經歷3
-          input.form-control(type="text" ng-model="poster.exprs[2]" required)
+          input.form-control(type="text" ng-model="poster.exprs[2]")
         .form-group
           label 地點
           input.form-control(type="text" ng-model="poster.location" required)
@@ -44,7 +44,7 @@
         //- button.btn.btn-default(ng-click="render($event)") Render
         button.btn.btn-primary(type="submit") 存檔
         label(ng-show="poster.id")
-          | 海報網址： 
+          |  海報網址： 
           a(target="_blank" ng-href="{{ poster.fullUrl() }}" ng-bind="poster.fullUrl()")
         //- img(ng-src="{{ renderedUrl }}")
 
