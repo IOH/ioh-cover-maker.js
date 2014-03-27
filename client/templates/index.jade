@@ -11,6 +11,13 @@
       #preview-container
         #preview
           #content-text
+            .text-left
+              p(ng-bind="page.brief")
+              img(ng-src="{{ page.avatar }}")
+              p
+                | 地點 : 
+                span(ng-bind="page.location")
+                
           #content-header
             img.img-responsive(src="/index/ioh_brand.png", alt="")
             .text-right
@@ -48,7 +55,9 @@
           input.form-control(type="text" ng-model="page.exprs[2]")
         .form-group
           label 地點
-          input.form-control(type="text" placeholder="ex MIT Media Lab")
+          input.form-control(type="text" ng-model="page.location")
         .form-group
           label 簡介
-          textarea.form-control#forbrief( rows="3")
+          textarea.form-control(rows="5" ng-model="page.brief")
+
+    .col-xs-6
