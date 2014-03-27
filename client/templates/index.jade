@@ -19,36 +19,19 @@
         img(src="index/portfolio1.jpg", alt="")
         .caption
           h2 範例一 合影
-          p
-            | ...
-            button.btn.btn-default Button
+          form(role="form")
+            .form-group
+              label(for="") Step1. 選擇含有你與景物的照片
+              input(type="file" required)
+            button.btn.btn-default(type="submit") 開始製作
 
     .col-xs-6
       .thumbnail
         img(src="index/portfolio2.jpg", alt="")
         .caption
           h2 範例二 大頭照與校園
-          p
-            | ...
-            button.btn.btn-default Button
-
-
-      //- <div class="span6">
-      //-         <h2></h2>
-      //-         <p><img src="img/portfolio1.jpg" alt=""> </p>
-      //-         <form action="/bgupload" method="post" enctype="multipart/form-data">
-      //-         <label for="file_selector">Step1. 選擇含有你與景物的照片</label>
-      //-         <input id="file_selector" name="bg" type="file" value="" />
-      //-         <input type="submit" value="開始製作">
-      //-         </form>
-      //-       </div>
-      //-       <div class="span6">
-      //-         <h2>範例二 大頭照與校園</h2>
-      //-         <p><img src="img/portfolio2.jpg" alt=""> </p>
-      //-        <form action="/bgupload2" method="post" enctype="multipart/form-data">
-      //-         <label for="file_selector">Step1. 選擇景物照片</label>
-      //-         <input id="file_selector" name="bg" type="file" value="" />
-      //-         <input type="submit" value="開始製作">
-      //-       </form>
-      //-       </div> 
-
+          form(role="form")
+            .form-group
+              label(for="") Step1. 選擇景物照片
+              input(type="file" required)
+            button.btn.btn-default(type="submit") 開始製作
