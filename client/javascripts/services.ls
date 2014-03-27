@@ -19,6 +19,12 @@ angular.module 'ioh-cover-maker.services' <[
       response.data = data.results or data.result or data
       response
 
+.factory 'Page' <[
+       $resource
+]> ++ ($resource) ->
+
+  $resource 'pages/:pagesId' {pagesId: '@id'}
+
 .factory 'Gems' <[
        $http
 ]> ++ ($http) ->
