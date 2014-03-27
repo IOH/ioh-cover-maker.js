@@ -7,10 +7,6 @@ module.exports = express!
   ..set 'view engine' 'jade'
   ..set 'views' './server/views'
 
-
-  ..use express.cookieParser!
   ..use express.bodyParser!
-  ..use express.methodOverride!
-  ..use express.session secret: 'keyboard cat'
 
   ..use express-promise!
