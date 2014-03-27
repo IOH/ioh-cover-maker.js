@@ -1,7 +1,7 @@
 {
   "name": "ioh-cover-maker",
   "version": "0.0.1",
-  "description": "NPM with RubyGems",
+  "description": "IOH cover maker",
   "main": "index.ls",
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 # ioh-cover-maker
 
-> NPM with RubyGems
+> IOH cover maker
 
 [![Travis CI   ](https://img.shields.io/travis/tomchentw/ioh-cover-maker/master.svg)             ](https://travis-ci.org/tomchentw/ioh-cover-maker)
 [![Quality     ](https://img.shields.io/codeclimate/github/tomchentw/ioh-cover-maker.svg)        ](https://codeclimate.com/github/tomchentw/ioh-cover-maker)

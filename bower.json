@@ -4,7 +4,7 @@
   "authors": [
     "tomchentw <developer@tomchentw.com>"
   ],
-  "description": "NPM with RubyGems",
+  "description": "IOH cover maker",
   "main": "index.ls",
   "keywords": [
     "npm",
