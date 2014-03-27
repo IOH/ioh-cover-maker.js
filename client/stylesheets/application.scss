@@ -22,6 +22,10 @@ body {
 }
 
 
+$preview-width: 960px;
+$preview-height: 540px;
+$content-text-height: 430px;
+
 #index {
   #preview-container {
     padding: 30px;
@@ -31,7 +35,7 @@ body {
     background-position: center;
 
     #preview {
-      @include size(960px, 540px);
+      @include size($preview-width, $preview-height);
       @include center-block();
       position: relative;
 
@@ -42,7 +46,6 @@ body {
       font-family: AdobeFanHeitiStd;
 
       * > { overflow: hidden; }
-      $content-text-height: 430px;
       #content-text { height: $content-text-height; position: relative; }
       #content-header { @include stretch($content-text-height, 0, 0, 0); }
     }
@@ -81,6 +84,12 @@ body {
     @include stretch(11px, 29px, auto, auto);
     > :nth-child(3) { color: #ff0604; }
   }
+
+  $cover-ratio: 4;
+
+  .thumbnail {
+    .cover { @include size(( $preview-width / $cover-ratio ), ( $content-text-height / $cover-ratio )); }
+  } 
 }
 
 

@@ -5,6 +5,7 @@ angular.module 'ioh-cover-maker' <[
   ui.bootstrap
   ui.router
   angular.ujs
+  ng-form-data
   ioh-cover-maker.templates
   ioh-cover-maker.services
   ioh-cover-maker.mappings
@@ -48,5 +49,18 @@ angular.module 'ioh-cover-maker' <[
       useColor: 'black'
       useAvatar: true
     }
+
+    $scope.$on 'success' !(event, key, image) ->
+      $scope.page[key] = image
+
+.controller 'ImageUploadCtrl' class
+
+  upload: (key) ->
+    <~! @Index.upload @$scope.newImage .then
+    @$scope.$emit 'success' key, it
+
+  @$inject = <[
+     $scope  Index ]>
+  !(@$scope, @Index) ->
 
 
