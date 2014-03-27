@@ -8,44 +8,48 @@ $icon-font-path: 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/';
 body {
   padding-top: 70px;
 
-  > header {
-    #gravatar {
-      margin-top: -8px;
-      margin-bottom: -8px;
-      @include square(36px);
-    }
+  > header.navbar {
+    
   }
 }
 
-#index {
-  .pkg-name {
-    padding: 0 .5em 0 .5em;
-  }
+@mixin stretch($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
 
-  #vice_versa {
-    margin-left: 1em;
+#preview-container {
+  padding: 30px;
+  margin-bottom: 10px;
+  background-image: url('/index/bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  #preview {
+    @include size(960px, 540px);
+    @include center-block();
+    position: relative;
+
+    * > { overflow: hidden; }
+    $content-text-height: 430px;
+    #content-text { height: $content-text-height; }
+    #content-header { @include stretch($content-text-height, 0, 0, 0); }
   }
 }
 
-#mappings_list {
-  .panel-heading, .panel-footer {
-    a { margin: 0 .5em; }
+#content-header > .text-right {
+  @include stretch(11px, 29px, auto, auto);
+  @font-face {
+    font-family: AdobeFanHeitiStd;
+    src:url('/AdobeFanHeitiStd-Bold.otf');
   }
+  font-family: AdobeFanHeitiStd;
 
-  %actor {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .commenter {
-    @extend %actor;
-    p { margin-top: 10px; }
-    .media-list {
-      margin-top: 10px;
-    }
-  }
-
-  .searcher {
-    @extend %actor;
-  }
+  > :nth-child(3) { color: #ff0604; }
 }
+
+
+

@@ -31,6 +31,13 @@ angular.module 'ioh-cover-maker' <[
   @$inject = <[
     $scope  Page ]>
   !($scope, Page) ->
-    
+    $scope.page = {
+      name: '莊智超 Chih-chao Chuang'
+      exprs: [
+        'MIT Media Lab, Master of Science Media Arts and Science 碩士, 20xx'
+        'MIT Media Lab, Master of Science Media Arts and Science 碩士, 20xx'
+        'MIT Media Lab, Master of Science Media Arts and Science 碩士, 20xx'
+      ]
+    }
 
 

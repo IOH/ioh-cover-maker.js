@@ -7,8 +7,23 @@
       li 存檔後寄給工作人員!
 
   .row
+    .col-xs-12
+      #preview-container
+        #preview
+          #content-text
+          #content-header
+            img.img-responsive(src="/index/ioh_brand.png", alt="")
+            .text-right
+              span(ng-bind="page.name")
+              br
+              span(ng-bind="page.exprs[0]")
+              br
+              span(ng-bind="page.exprs[1]")
+              br
+              span(ng-bind="page.exprs[2]")
+  .row
     .col-xs-6
       form(role="form")
         .form-group
           label 姓名
-          input.form-control(type="text" ng-model="name")
+          input.form-control(type="text" ng-model="page.name")
