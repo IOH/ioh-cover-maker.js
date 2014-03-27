@@ -30,14 +30,17 @@ $content-text-height: 430px;
   #preview-container {
     padding: 30px;
     margin-bottom: 10px;
+    height: $preview-height;
+
     background-image: url('/index/bg.png');
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 
     #preview {
       @include size($preview-width, $preview-height);
-      @include center-block();
-      position: relative;
+      @include stretch(0, 0, 0, 50%);
+      margin-left: -($preview-width / 2);
 
       @font-face {
         font-family: AdobeFanHeitiStd;
@@ -83,6 +86,10 @@ $content-text-height: 430px;
   #content-header > .text-right {
     @include stretch(11px, 29px, auto, auto);
     > :nth-child(3) { color: #ff0604; }
+  }
+
+  .form-inline {
+    margin: 10px 0;
   }
 
   $cover-ratio: 4;

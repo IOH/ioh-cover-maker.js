@@ -112,6 +112,7 @@ gulp.task 'client:js' <[ client:templates client:js:ls ]> ->
     'bower_components/angular-sanitize/angular-sanitize.min.js'
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
     'bower_components/ng-form-data/ng-form-data.min.js'
+    'bower_components/html2canvas/build/html2canvas.min.js'
     'client/javascripts/vendor/angular-ui-router.min.js'
     'client/javascripts/vendor/angular-ujs.min.js'
     'tmp/.js-cache/*.js'
