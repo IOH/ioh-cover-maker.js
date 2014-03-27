@@ -2,16 +2,13 @@ require! {
   './server'
 }
 require! {
-  '../controllers/comments'
+  '../controllers/poster'
   '../controllers/index'
-  '../controllers/mappings'
 }
 
-server.get '/api/mappings' mappings.list
-server.post '/api/mappings' mappings.create
-
-server.post '/api/comments' comments.create
-server.post '/api/comments/:id' comments.update
+server.get '/api/posters' poster.list
+server.post '/api/posters' poster.create
+server.post '/api/posters/:id' poster.update
 
 server.post '/api/upload' index.upload
 server.get '/' index.render
