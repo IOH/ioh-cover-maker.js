@@ -1,28 +1,54 @@
 #index.container-fluid
+  .well
+    h1 Hello, Speaker!
+    p 使用說明:這個頁面是在製作講者宣傳圖片!謝謝各位的樂心參與！
+    p
+      | 本工具提供兩種 IOH Facebook 宣傳海報樣版，我們需要你與你的學校、實驗室、所在都市或是工作地點的合照。你可以選擇兩種海報範例。
+      br
+      | 範例一. 將你自己在以上地點所合照的照片製成宣傳海報。
+      br
+      | 範例二. 將一張你自己的大頭照與一張以上地點的海報一起製成宣傳海報。
+      br
+      | 若是選用範例一的，請上傳一張有你自己在以上地點的合照。
+      br
+      | 若是選用範例二的，請上傳一張你所在地點的背景圖片。
+
   .row
-    .col-xs-12
-      .jumbotron
-        .container
-          h1 NPM <-> RubyGems
-          p Find the recommended corresponding NPM packages by RubyGems
+    .col-xs-6
+      .thumbnail
+        img(src="index/portfolio1.jpg", alt="")
+        .caption
+          h2 範例一 合影
+          p
+            | ...
+            button.btn.btn-default Button
 
-          form.form-inline(role="form" name="searchForm")
-            .form-group
-              label
-                | Suggest me some
-                span.pkg-name(ng-bind="index.targetText()")
-                | by a
-              input.pkg-name.form-control(type="text" ng-model="name"
-                ng-attr-placeholder="{{index.sourcePlaceholder()}}"
-                ng-change="search()")
+    .col-xs-6
+      .thumbnail
+        img(src="index/portfolio2.jpg", alt="")
+        .caption
+          h2 範例二 大頭照與校園
+          p
+            | ...
+            button.btn.btn-default Button
 
-            //- button.btn.btn-primary.btn-lg(type="submit") Go
-            a#vice_versa(ng-click="viceVersa()") vice versa!  
 
-          p(ng-show="!searchForm.$pristine && name.length > 0")
-            | Type more ... we're working ...
-  .row
-    .col-xs-12(ng-include="'/mappings/_list.html'")
-      
-
+      //- <div class="span6">
+      //-         <h2></h2>
+      //-         <p><img src="img/portfolio1.jpg" alt=""> </p>
+      //-         <form action="/bgupload" method="post" enctype="multipart/form-data">
+      //-         <label for="file_selector">Step1. 選擇含有你與景物的照片</label>
+      //-         <input id="file_selector" name="bg" type="file" value="" />
+      //-         <input type="submit" value="開始製作">
+      //-         </form>
+      //-       </div>
+      //-       <div class="span6">
+      //-         <h2>範例二 大頭照與校園</h2>
+      //-         <p><img src="img/portfolio2.jpg" alt=""> </p>
+      //-        <form action="/bgupload2" method="post" enctype="multipart/form-data">
+      //-         <label for="file_selector">Step1. 選擇景物照片</label>
+      //-         <input id="file_selector" name="bg" type="file" value="" />
+      //-         <input type="submit" value="開始製作">
+      //-       </form>
+      //-       </div> 
 
