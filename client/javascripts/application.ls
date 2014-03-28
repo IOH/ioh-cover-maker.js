@@ -25,8 +25,8 @@ angular.module 'ioh-cover-maker' <[
 
   .state 'Poster.Show' do
     url: '/:id'
-    templateUrl: '/posters/show.html'
-    controller: 'ShowPosterCtrl'
+    templateUrl: '/index.html'
+    controller: 'IndexCtrl as index'
 
   $locationProvider.html5Mode true
 
@@ -55,9 +55,11 @@ angular.module 'ioh-cover-maker' <[
     @$scope.poster.$save!
 
   @$inject = <[
-     $scope   Poster ]>
-  !(@$scope, @Poster) ->
-    $scope.poster = new Poster do
+     $scope   $stateParams   Poster ]>
+  !(@$scope, @$stateParams, @Poster) ->
+    $scope.poster = if 'id' of $stateParams
+       Poster.get posterId: $stateParams.id
+    else new Poster do
       name: '莊智超 Chih-chao Chuang'
       location: 'MIT Media Lab'
       brief: '''希望提供一個跨國、跨領域的公開經驗交流分享平台，
@@ -94,11 +96,3 @@ angular.module 'ioh-cover-maker' <[
   @$inject = <[
      $scope   Index ]>
   !(@$scope, @Index) ->
-
-.controller 'ShowPosterCtrl' class
-
-  @$inject = <[
-     $scope   $stateParams   Poster ]>
-  !(@$scope, @$stateParams, @Poster) ->
-
-    $scope.poster = Poster.get posterId: $stateParams.id
