@@ -35,7 +35,7 @@ angular.module 'ioh-cover-maker' <[
 ]> ++ !($rootScope) ->
 
 
-.directive 'html2url' <[
+.directive 'html2canvas' <[
        $window  $q
 ]> ++ ($window, $q) ->
 
@@ -43,14 +43,13 @@ angular.module 'ioh-cover-maker' <[
     const deferred = $q.defer!
     const options = do
       chinese: true
-      onrendered: !(canvas) ->
-        deferred.resolve canvas.toDataURL 'image/png'
+      onrendered: deferred.resolve
 
     $window.html2canvas $element, options
     deferred.promise
 
   !($scope, $element, $attrs) ->
-    $scope[$attrs.html2url] = do
+    $scope[$attrs.html2canvas] = do
       render: angular.bind void, render, $element.0
 
 .controller 'IndexCtrl' class
@@ -59,8 +58,8 @@ angular.module 'ioh-cover-maker' <[
     @$scope.poster.$save!
 
   @$inject = <[
-     $scope   $stateParams   Poster ]>
-  !(@$scope, @$stateParams, @Poster) ->
+     $scope   $window   $stateParams   Poster ]>
+  !(@$scope, @$window, @$stateParams, @Poster) ->
     $scope.poster = if 'id' of $stateParams
        Poster.get posterId: $stateParams.id
     else new Poster do
@@ -85,9 +84,11 @@ angular.module 'ioh-cover-maker' <[
     $scope.$on 'success' !(event, key, image) ->
       $scope.poster[key] = image
 
-    $scope.render = !->
+    $scope.saveFile = !->
       <-! $scope.preview.render!then
-      $scope.renderedUrl = it
+      it.toBlob ->
+        $window.saveAs it, 'poster.png'
+      , 'image/png', 100
 
 .controller 'ImageUploadCtrl' class
 
