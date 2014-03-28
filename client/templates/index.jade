@@ -15,7 +15,7 @@
   .row
     .col-xs-12
       #preview-container
-        #preview(ng-class="{'scale-active': !rendering}" html2url="preview")
+        #preview(html2url="preview")
           #content-text(ng-style="{'background-image': 'url(' + poster.cover + ')'}")
             .text-left
               p(ng-bind="poster.brief")
@@ -72,8 +72,6 @@
         label(ng-show="poster.id")
           |  海報網址： 
           a(target="_blank" ng-href="{{ poster.fullUrl() }}" ng-bind="poster.fullUrl()")
-      .thumbnail(ng-show="renderedUrl")
-        img(ng-src="{{ renderedUrl }}")
 
     .col-xs-6
       .well
@@ -92,6 +90,11 @@
           button.btn.btn-default(type="submit") 上傳
         .thumbnail(ng-show="poster.useAvatar")
           img.avatar(ng-src="{{ poster.avatar }}" alt="")
+
+  .row
+    .col-xs-12
+      .thumbnail(ng-show="renderedUrl")
+        img(ng-src="{{ renderedUrl }}")
 
   .row
     iframe(src="https://docs.google.com/forms/d/1jDXnLJ5Y2WOG-JIbNCqt-ovmoyt_Sqg6ptDltqoCxn4/viewform?embedded=true"

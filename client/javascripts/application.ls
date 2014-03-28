@@ -41,8 +41,12 @@ angular.module 'ioh-cover-maker' <[
 
   function render ($element)
     const deferred = $q.defer!
-    $window.html2canvas $element, onrendered: !(canvas) ->
-      deferred.resolve canvas.toDataURL 'image/png'
+    const options = do
+      chinese: true
+      onrendered: !(canvas) ->
+        deferred.resolve canvas.toDataURL 'image/png'
+
+    $window.html2canvas $element, options
     deferred.promise
 
   !($scope, $element, $attrs) ->
@@ -82,10 +86,8 @@ angular.module 'ioh-cover-maker' <[
       $scope.poster[key] = image
 
     $scope.render = !->
-      $scope.rendering = true
       <-! $scope.preview.render!then
       $scope.renderedUrl = it
-      $scope.rendering = false
 
 .controller 'ImageUploadCtrl' class
 
