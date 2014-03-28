@@ -1,6 +1,5 @@
 require! {
   Q: q
-  mkdirp
   express
 }
 require! {
@@ -17,7 +16,7 @@ module.exports = ->
   server.use require('connect-livereload')! unless config.env.is 'production'
 
   server.use express.static './public'
-  server.use express.static './tmp/public'
+  server.use express.static './tmp/public' unless config.env.is 'production'
 
   server.use !(req, res) -> res.render 'index.jade'
 
@@ -32,10 +31,7 @@ module.exports = ->
 #
 #
 function setup
-  Q.all [
-    database!
-    Q.nfcall mkdirp, './tmp/public/uploads'
-  ]
+  database!
 
 function database
   sequelize

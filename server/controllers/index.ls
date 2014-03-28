@@ -1,17 +1,20 @@
 require! {
-  fs
-  path
+  imgur: 'imgur-node-api'
 }
 
-exports.upload = !(req, res) ->
-  const {file} = req.files
-  const pathSegment = "/uploads/#{ path.basename file.path }"
+# imgur account:
+# innovationopenhouse
+# email: ioh common google apps
+# password: you know it
+imgur.setClientID process.env['IMGUR_KEY']
 
-  fs.createReadStream file.path
-  .pipe fs.createWriteStream "./tmp/public#{ pathSegment }"
-  .on 'close' !->
-    res.json do
-      result: pathSegment
+exports.upload = !(req, res) ->
+  const {path} = req.files.file
+  (err, {data}) <-! imgur.upload path
+  return res.json error: that if data.error
+
+  res.json do
+    result: data.link
 
 exports.render = !(req, res) ->
   res.render 'index'

@@ -43,6 +43,7 @@ angular.module 'ioh-cover-maker' <[
     const deferred = $q.defer!
     const options = do
       chinese: true
+      useCORS: true
       onrendered: deferred.resolve
 
     $window.html2canvas $element, options
