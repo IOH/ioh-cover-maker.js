@@ -21,6 +21,10 @@ body {
   left: $left;
 }
 
+@font-face {
+  font-family: AdobeFanHeitiStd;
+  src:url('/AdobeFanHeitiStd-Bold.otf');
+}
 
 $preview-width: 1920px;
 $preview-height: 1080px;
@@ -44,11 +48,6 @@ $content-text-height: 860px;
   #preview {
     @include size($preview-width, $preview-height);
     position: relative;
-
-    @font-face {
-      font-family: AdobeFanHeitiStd;
-      src:url('/AdobeFanHeitiStd-Bold.otf');
-    }
     font-family: AdobeFanHeitiStd;
 
     * > { overflow: hidden; }
