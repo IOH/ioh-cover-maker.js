@@ -42,7 +42,7 @@
       form(role="form" ng-submit="index.save()")
         .form-group
           p 大頭照
-          .btn-group(data-toggle="buttons")
+          .btn-group
             button.btn.btn-default(type="button" name="avatar"  ng-model="poster.useAvatar" btn-radio="false") 不使用
             button.btn.btn-default(type="button" name="avatar"  ng-model="poster.useAvatar" btn-radio="true" ) 使用
         .form-group
@@ -69,8 +69,9 @@
           label 簡介
           textarea.form-control(rows="5" ng-model="poster.brief" required)
 
-        button.btn.btn-default(type="button" ng-click="saveFile()") 輸出海報
-        button.btn.btn-primary(type="submit") 存檔
+        .btn-group    
+          button.btn.btn-default(type="button" ng-click="saveFile()") 輸出海報
+          button.btn.btn-primary(type="submit") 存檔
         label(ng-show="poster.id")
           |  海報網址： 
           a(target="_blank" ng-href="{{ poster.fullUrl() }}" ng-bind="poster.fullUrl()")
