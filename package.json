@@ -39,7 +39,8 @@
     "imgur-node-api": "0.0.2",
     "express": "^3.4.8",
     "express-promise": "^0.1.9",
-    "jade": "^1.2.0"
+    "jade": "^1.2.0",
+    "newrelic": "^1.4.0"
   },
   "devDependencies": {
     "highlight.js": "^8.0.0",
