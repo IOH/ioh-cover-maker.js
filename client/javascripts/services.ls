@@ -26,7 +26,7 @@ angular.module 'ioh-cover-maker.services' <[
   const Poster = $resource '/api/posters/:posterId' {posterId: '@id'}
 
   Poster::fullUrl = ->
-    "#{ $window.location.origin }/posters/#{ @id }"
+    "#{ $window.location.origin }/posters/#{ @id }/#{ @name }"
 
   Poster
 

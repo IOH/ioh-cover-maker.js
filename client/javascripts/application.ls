@@ -12,21 +12,25 @@ angular.module 'ioh-cover-maker' <[
 .config <[
         $stateProvider  $locationProvider
 ]> ++ !($stateProvider, $locationProvider) ->
-  $stateProvider
-  .state 'Index' do
-    url: '/'
+  const {extend} = angular
+  const indexState = do
     templateUrl: '/index.html'
     controller: 'IndexCtrl as index'
+
+  $stateProvider
+  .state 'Index' extend {}, indexState, do
+    url: '/'
 
   .state 'Poster' do
     url: '/posters'
     abstract: true
     template: '<ui-view/>'
 
-  .state 'Poster.Show' do
+  .state 'Poster.Show' extend {}, indexState, do
     url: '/:id'
-    templateUrl: '/index.html'
-    controller: 'IndexCtrl as index'
+
+  .state 'Poster.ShowWithName' extend {}, indexState, do
+    url: '/:id/:name'
 
   $locationProvider.html5Mode true
 
