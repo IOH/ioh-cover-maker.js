@@ -12,4 +12,3 @@ server.post '/api/posters' poster.create
 server.post '/api/posters/:id' poster.update
 
 server.post '/api/upload' index.upload
-server.get '/' index.render

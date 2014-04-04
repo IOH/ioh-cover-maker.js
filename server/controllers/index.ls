@@ -15,6 +15,3 @@ exports.upload = !(req, res) ->
 
   res.json do
     result: data.link
-
-exports.render = !(req, res) ->
-  res.render 'index'

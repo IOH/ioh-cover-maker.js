@@ -2,16 +2,8 @@ $icon-font-path: 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/';
 
 @import "bootstrap";
 @import "footer";
-/*
- * app
- */
-body {
-  padding-top: 70px;
 
-  > header.navbar {
-    
-  }
-}
+body { padding-top: 70px; }
 
 @mixin stretch($top, $right, $bottom, $left) {
   position: absolute;
@@ -102,7 +94,3 @@ $cover-ratio: 4;
 .thumbnail {
   .cover { @include size(( $preview-width / $cover-ratio ), ( $content-text-height / $cover-ratio )); }
 } 
-
-
-
-
