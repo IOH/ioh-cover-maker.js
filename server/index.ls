@@ -15,8 +15,10 @@ module.exports = ->
 
   server.use require('connect-livereload')! unless config.env.is 'production'
 
-  server.use '/' express.static './public'
-  server.use '/' express.static './tmp/public' unless config.env.is 'production'
+  server.use express.static prefix = './public'
+  server.use express.static prefix = './tmp/public' unless config.env.is 'production'
+
+  server.use !(req, res) -> res.sendfile "#prefix/index.html"
 
   const deferred = Q.defer!
 
