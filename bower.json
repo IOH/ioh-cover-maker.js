@@ -30,10 +30,8 @@
     "Makefile",
     "package.json"
   ],
-  "devDependencies": {
+  "dependencies": {
     "angular": "~1.2.13",
-    "angular-animate": "~1.2.14",
-    "angular-sanitize": "~1.2.14",
     "angular-resource": "~1.2.14",
     "angular-bootstrap": "~0.10.0",
     "twbs-bootstrap-sass": "~3.1.1",
@@ -41,5 +39,8 @@
     "html2canvas": "~0.4.1",
     "blueimp-canvas-to-blob": "~2.1.0",
     "FileSaver": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.13"
   }
 }

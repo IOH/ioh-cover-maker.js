@@ -1,4 +1,4 @@
-angular.module 'ioh-cover-maker' <[
+angular.module 'application' <[
   ngAnimate
   ngResource
   ngSanitize
@@ -6,8 +6,8 @@ angular.module 'ioh-cover-maker' <[
   ui.router
   angular.ujs
   ng-form-data
-  ioh-cover-maker.templates
-  ioh-cover-maker.services
+  application.templates
+  application.services
 ]>
 .config <[
         $stateProvider  $locationProvider

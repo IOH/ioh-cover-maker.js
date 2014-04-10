@@ -1,4 +1,4 @@
-angular.module 'ioh-cover-maker.services' <[
+angular.module 'application.services' <[
   ngResource
 ]>
 .config <[
