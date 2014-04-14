@@ -1,11 +1,10 @@
 # ioh-cover-maker
-
 > IOH cover maker
 
-[![Travis CI   ](https://img.shields.io/travis/tomchentw/ioh-cover-maker/master.svg)             ](https://travis-ci.org/tomchentw/ioh-cover-maker)
-[![Quality     ](https://img.shields.io/codeclimate/github/tomchentw/ioh-cover-maker.svg)        ](https://codeclimate.com/github/tomchentw/ioh-cover-maker)
-[![Coverage    ](https://img.shields.io/coveralls/tomchentw/ioh-cover-maker.svg)                 ](https://coveralls.io/r/tomchentw/ioh-cover-maker)
-[![Dependencies](https://img.shields.io/gemnasium/tomchentw/ioh-cover-maker.svg)                 ](https://gemnasium.com/tomchentw/ioh-cover-maker)
+[![Travis CI   ](https://travis-ci.org/tomchentw/ioh-cover-maker.svg?branch=master)                 ](https://travis-ci.org/tomchentw/ioh-cover-maker)
+[![Quality     ](https://img.shields.io/codeclimate/github/tomchentw/ioh-cover-maker.svg)           ](https://codeclimate.com/github/tomchentw/ioh-cover-maker)
+[![Coverage    ](https://img.shields.io/coveralls/tomchentw/ioh-cover-maker.svg)                    ](https://coveralls.io/r/tomchentw/ioh-cover-maker)
+[![Dependencies](https://gemnasium.com/tomchentw/ioh-cover-maker.svg)                               ](https://gemnasium.com/tomchentw/ioh-cover-maker)
 
 
 ## Project philosophy

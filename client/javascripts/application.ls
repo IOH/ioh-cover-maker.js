@@ -1,6 +1,7 @@
 angular.module 'application' <[
-  ngResource
   ui.bootstrap
+  ga
+  ngResource
   ui.router
   angular.ujs
   ng-form-data
