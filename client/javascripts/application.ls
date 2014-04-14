@@ -97,8 +97,13 @@ angular.module 'application' <[
 .controller 'ImageUploadCtrl' class
 
   upload: (key) ->
-    <~! @Index.upload @$scope.newImage .then
-    @$scope.$emit 'success' key, it.link
+    const {$scope} = @
+    const {newImage, poster} = $scope
+    newImage.title = poster.name
+    newImage.description = poster.fullUrl!
+
+    <-! @Index.upload newImage .then
+    $scope.$emit 'success' key, it.link
 
   @$inject = <[
      $scope   Index ]>

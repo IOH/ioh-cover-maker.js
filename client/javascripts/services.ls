@@ -34,10 +34,11 @@ angular.module 'application.services' <[
        $http
 ]> ++ ($http) ->
 
-  const TOKEN = 'cdf6d52bc9f2a1f6a7021b290d02c16144f101ebb640223c20e9fb2bc88c61d6'
+  const TOKEN = 'bd7900bdc834f416e50acd2a29f32086e7bba6cc9eb4b41f951cf929904afd50'
 
   upload: (newImg) ->
     newImg.album = TOKEN
+    newImg.description or= 'http://ioh-cover-maker.herokuapp.com'
 
     $http do
       method: 'POST'
