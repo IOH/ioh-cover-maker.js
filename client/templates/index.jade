@@ -78,7 +78,7 @@
         form.form-inline(role="form" ng-controller="ImageUploadCtrl as imgup" ng-submit="imgup.upload('cover')")
           .form-group
             label(for="") 底圖（尺寸：1920px x 860px）
-            input(type="file" ng-model="newImage.file" required)
+            input(type="file" ng-model="newImage.image" required)
           button.btn.btn-default(type="submit") 上傳
         .thumbnail
           img.cover(ng-src="{{ poster.cover }}" alt="")
@@ -86,7 +86,7 @@
         form.form-inline(role="form" ng-show="poster.useAvatar" ng-controller="ImageUploadCtrl as imgup" ng-submit="imgup.upload('avatar')")
           .form-group
             label(for="") 大頭照（請先裁切成 1:1，尺寸至少：320 x 320px）
-            input(type="file" ng-model="newImage.file" required)
+            input(type="file" ng-model="newImage.image" required)
           button.btn.btn-default(type="submit") 上傳
         .thumbnail(ng-show="poster.useAvatar")
           img.avatar(ng-src="{{ poster.avatar }}" alt="")

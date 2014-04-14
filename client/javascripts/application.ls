@@ -98,7 +98,7 @@ angular.module 'application' <[
 
   upload: (key) ->
     <~! @Index.upload @$scope.newImage .then
-    @$scope.$emit 'success' key, it
+    @$scope.$emit 'success' key, it.link
 
   @$inject = <[
      $scope   Index ]>

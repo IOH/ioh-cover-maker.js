@@ -16,7 +16,7 @@ angular.module 'application.services' <[
     if data.errors or data.error
       $q.reject that
     else
-      response.data = data.results or data.result or data
+      response.data = data.results or data.result or data.data or data
       response
 
 .factory 'Poster' <[
@@ -34,5 +34,16 @@ angular.module 'application.services' <[
        $http
 ]> ++ ($http) ->
 
-  upload: ->
-    $http.post '/api/upload', it .then ({data}) -> data
+  const TOKEN = 'cdf6d52bc9f2a1f6a7021b290d02c16144f101ebb640223c20e9fb2bc88c61d6'
+
+  upload: (newImg) ->
+    newImg.album = TOKEN
+
+    $http do
+      method: 'POST'
+      url: 'http://putimgur.tomchentw.com/3/image'
+      headers: do
+        'Authorization': 'Client-ID 259364784188158'
+        'Replacement': "Token #{ TOKEN }"
+      data: newImg
+    .then ({data}) -> data

@@ -35,7 +35,6 @@
     "q": "^1.0.0",
     "pg": "^2.11.1",
     "sequelize": "^1.7.0",
-    "imgur-node-api": "0.0.2",
     "express": "^3.4.8",
     "express-promise": "^0.1.9",
     "newrelic": "^1.4.0",
