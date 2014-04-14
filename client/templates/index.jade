@@ -9,7 +9,7 @@
         | * 如果要使用輸出海報功能，
         strong 請將瀏覽器視窗「縮放」到可完整看見海報預覽圖
         |，否則輸出成品會不完整。
-        a(href="/index/firefox_scale.png" target="_blank") 看示意圖
+        a(ga href="/index/firefox_scale.png" target="_blank") 看示意圖
 
   .row
     .col-xs-12
@@ -40,45 +40,45 @@
         .form-group
           p 大頭照
           .btn-group
-            button.btn.btn-default(type="button" name="avatar"  ng-model="poster.useAvatar" btn-radio="false") 不使用
-            button.btn.btn-default(type="button" name="avatar"  ng-model="poster.useAvatar" btn-radio="true" ) 使用
+            button.btn.btn-default(ga type="button" name="avatar"  ng-model="poster.useAvatar" btn-radio="false") 不使用
+            button.btn.btn-default(ga type="button" name="avatar"  ng-model="poster.useAvatar" btn-radio="true" ) 使用
         .form-group
           p 地點文字顏色
           .btn-group
-            button.btn.btn-default(type="button" ng-model="poster.useColor" btn-radio="'white'") 白色
-            button.btn.btn-default(type="button" ng-model="poster.useColor" btn-radio="'black'") 黑色
+            button.btn.btn-default(ga type="button" ng-model="poster.useColor" btn-radio="'white'") 白色
+            button.btn.btn-default(ga type="button" ng-model="poster.useColor" btn-radio="'black'") 黑色
         .form-group
           label 姓名
-          input.form-control(type="text" ng-model="poster.name" required)
+          input.form-control(ga type="text" ng-model="poster.name" required)
         .form-group
           label 經歷1 (紅字)
-          input.form-control(type="text" ng-model="poster.exprs[0]" required)
+          input.form-control(ga type="text" ng-model="poster.exprs[0]" required)
         .form-group
           label 經歷2
-          input.form-control(type="text" ng-model="poster.exprs[1]")
+          input.form-control(ga type="text" ng-model="poster.exprs[1]")
         .form-group
           label 經歷3
-          input.form-control(type="text" ng-model="poster.exprs[2]")
+          input.form-control(ga type="text" ng-model="poster.exprs[2]")
         .form-group
           label 地點
-          input.form-control(type="text" ng-model="poster.location" required)
+          input.form-control(ga type="text" ng-model="poster.location" required)
         .form-group
           label 簡介
-          textarea.form-control(rows="5" ng-model="poster.brief" required)
+          textarea.form-control(ga rows="5" ng-model="poster.brief" required)
 
         .btn-group    
-          button.btn.btn-default(type="button" ng-click="saveFile()") 輸出海報
-          button.btn.btn-primary(type="submit") 存檔
+          button.btn.btn-default(ga type="button" ng-click="saveFile()") 輸出海報
+          button.btn.btn-primary(ga type="submit") 存檔
         label(ng-show="poster.id")
           |  海報網址： 
-          a(target="_blank" ng-href="{{ poster.fullUrl() }}" ng-bind="poster.fullUrl()")
+          a(ga target="_blank" ng-href="{{ poster.fullUrl() }}" ng-bind="poster.fullUrl()")
 
     .col-xs-6
       .well
         form.form-inline(role="form" ng-controller="ImageUploadCtrl as imgup" ng-submit="imgup.upload('cover')")
           .form-group
             label(for="") 底圖（尺寸：1920px x 860px）
-            input(type="file" ng-model="newImage.image" required)
+            input(ga type="file" ng-model="newImage.image" required)
           button.btn.btn-default(type="submit") 上傳
         .thumbnail
           img.cover(ng-src="{{ poster.cover }}" alt="")
@@ -86,7 +86,7 @@
         form.form-inline(role="form" ng-show="poster.useAvatar" ng-controller="ImageUploadCtrl as imgup" ng-submit="imgup.upload('avatar')")
           .form-group
             label(for="") 大頭照（請先裁切成 1:1，尺寸至少：320 x 320px）
-            input(type="file" ng-model="newImage.image" required)
+            input(ga type="file" ng-model="newImage.image" required)
           button.btn.btn-default(type="submit") 上傳
         .thumbnail(ng-show="poster.useAvatar")
           img.avatar(ng-src="{{ poster.avatar }}" alt="")
@@ -98,4 +98,4 @@
 
   .row
     iframe(src="https://docs.google.com/forms/d/1jDXnLJ5Y2WOG-JIbNCqt-ovmoyt_Sqg6ptDltqoCxn4/viewform?embedded=true"
-      width="900" height="800" frameborder="0" marginheight="0" marginwidth="0")
+      width="1000" height="1000" frameborder="0" marginheight="0" marginwidth="0")
