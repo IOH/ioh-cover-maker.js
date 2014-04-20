@@ -14,6 +14,12 @@ body { padding-top: 70px; }
   @if $offset-right { right: $offset-right; }
 }
 
+.media-object {
+  @include square(64px);
+}
+
+.jumbotron ol { font-size: 20px; }
+
 @font-face {
   font-family: AdobeFanHeitiStd;
   src:url('/AdobeFanHeitiStd-Bold.otf');

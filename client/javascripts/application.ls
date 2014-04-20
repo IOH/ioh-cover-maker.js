@@ -12,32 +12,30 @@ angular.module 'application' <[
 .config <[
         $stateProvider  $locationProvider
 ]> ++ !($stateProvider, $locationProvider) ->
-  const {extend} = angular
-  const indexState = do
-    templateUrl: '/index.html'
-    controller: 'IndexCtrl as index'
+  function extend (that)
+    angular.extend {}, do
+      templateUrl: '/show.html'
+      controller: 'ShowCtrl as show'
+    , that
 
   $stateProvider
-  .state 'Index' extend {}, indexState, do
+  .state 'Index' do
     url: '/'
+    templateUrl: '/index.html'
+    controller: 'IndexCtrl as index'
 
   .state 'Poster' do
     url: '/posters'
     abstract: true
     template: '<ui-view/>'
 
-  .state 'Poster.Show' extend {}, indexState, do
+  .state 'Poster.Show' extend do
     url: '/:id'
 
-  .state 'Poster.ShowWithName' extend {}, indexState, do
+  .state 'Poster.ShowWithName' extend do
     url: '/:id/:name'
 
   $locationProvider.html5Mode true
-
-.run <[
-        $rootScope
-]> ++ !($rootScope) ->
-
 
 .directive 'html2canvas' <[
        $window  $q
@@ -60,14 +58,14 @@ angular.module 'application' <[
 .controller 'IndexCtrl' class
 
   save: !->
-    @$scope.poster.$save!
+    <~! @$scope.poster.$save!then
+    @$state.transitionTo 'Poster.Show', @$scope.poster{id}
 
   @$inject = <[
-     $scope   $window   $stateParams   Poster ]>
-  !(@$scope, @$window, @$stateParams, @Poster) ->
-    $scope.poster = if 'id' of $stateParams
-       Poster.get posterId: $stateParams.id
-    else new Poster do
+     $scope   $state   Poster ]>
+  !(@$scope, @$state, @Poster) ->
+
+    $scope.poster = new Poster do
       name: '莊智超 Chih-chao Chuang'
       location: 'MIT Media Lab'
       brief: '''希望提供一個跨國、跨領域的公開經驗交流分享平台，
@@ -85,6 +83,18 @@ angular.module 'application' <[
 
       cover: '/index/cover.jpg'
       avatar: '/index/avatar.png'
+
+    $scope.posters = Poster.query!
+
+.controller 'ShowCtrl' class
+
+  save: !->
+    @$scope.poster.$save!
+
+  @$inject = <[
+     $scope   $window   $stateParams   Poster ]>
+  !(@$scope, @$window, @$stateParams, @Poster) ->
+    $scope.poster = Poster.get posterId: $stateParams.id
 
     $scope.$on 'success' !(event, key, image) ->
       $scope.poster[key] = image
