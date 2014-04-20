@@ -97,6 +97,7 @@ gulp.task 'client:css:scss' ->
 gulp.task 'client:css:bower_components' ->
   stream = gulp.src <[
     bower_components/angular/angular-csp.css
+    bower_components/angular-loading-bar/build/loading-bar.min.css
   ]>
   stream.=pipe gulp-minify-css! if config.env.is 'production'
   return stream.pipe gulp.dest 'tmp/.css-cache'
@@ -153,6 +154,7 @@ gulp.task 'client:js' <[ client:templates client:js:ls client:js:bower_component
     'bower_components/ng-form-data/ng-form-data.min.js'
     'bower_components/html2canvas/build/html2canvas.min.js'
     'bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js'
+    'bower_components/angular-loading-bar/build/loading-bar.min.js'
     'client/javascripts/vendor/angular-ui-router.min.js'
     'client/javascripts/vendor/angular-ujs.min.js'
     'tmp/.js-cache/*.js'

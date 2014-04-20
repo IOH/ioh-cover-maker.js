@@ -5,6 +5,7 @@ angular.module 'application' <[
   ui.router
   angular.ujs
   ng-form-data
+  angular-loading-bar
   application.templates
   application.services
 ]>
