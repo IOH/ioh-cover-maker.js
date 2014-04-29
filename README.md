@@ -14,6 +14,18 @@
 It also has great readibility and lots of syntax sugar just like you're writting python/ruby.
 
 
+## Usage
+
+### Sync remote database to local
+
+Use [`heroku pg:transfer`](http://www.higherorderheroku.com/articles/pgtransfer-is-the-new-taps/):
+
+```sh
+curl -o production.dump `heroku pgbackups:url`
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -d 'ioh-cover-maker' production.dump
+```
+
+
 ## Contributing
 
 [![devDependency Status](https://david-dm.org/tomchentw/ioh-cover-maker/dev-status.svg?theme=shields.io)](https://david-dm.org/tomchentw/ioh-cover-maker#info=devDependencies)
