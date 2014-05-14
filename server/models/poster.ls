@@ -8,7 +8,7 @@ module.exports = sequelize.define 'Poster' do
   location: Sequelize.STRING
   brief: Sequelize.TEXT
   exprs: Sequelize.ARRAY(Sequelize.STRING)
-  hightlightIndex: Sequelize.INTEGER
+  # hightlightIndex: Sequelize.INTEGER -- in migration file commented out!!
 
   useColor: Sequelize.STRING
   useAvatar: Sequelize.BOOLEAN
