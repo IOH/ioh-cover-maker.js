@@ -35,10 +35,10 @@ function database
   .authenticate!
   # .then sequelize.drop.bind sequelize
   .then sequelize.sync.bind sequelize
-  # .then runPendingMigrations
+  .then runPendingMigrations
 
 function runPendingMigrations
   sequelize.getMigrator do
-    path: "#{ process.cwd! }/config/migrations"
+    path: "#{ process.cwd! }/server/migrations"
     filesFilter: /\.ls$/
   .migrate!

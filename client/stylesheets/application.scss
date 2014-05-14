@@ -88,8 +88,6 @@ $content-text-height: 860px;
 #content-header > .text-right {
   @include stretch(22px, 58px, auto, auto);
   font-size: 28px;
-
-  > :nth-child(3) { color: #ff0604; }
 }
 
 .form-inline {

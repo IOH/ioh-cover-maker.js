@@ -78,6 +78,8 @@ angular.module 'application' <[
         'MIT Media Lab, Master of Science Media Arts and Science 碩士, 20xx'
         'MIT Media Lab, Master of Science Media Arts and Science 碩士, 20xx'
       ]
+      hightlightIndex: 0
+
       useColor: 'black'
       useAvatar: true
 

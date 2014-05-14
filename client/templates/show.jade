@@ -23,11 +23,11 @@
             .text-right
               span(ng-bind="poster.name")
               br
-              span(ng-bind="poster.exprs[0]")
+              span(ng-bind="poster.exprs[0]" ng-style="{'color': poster.hightlightIndex == 0 ? '#ff0604' : 'inherit'}")
               br
-              span(ng-bind="poster.exprs[1]")
+              span(ng-bind="poster.exprs[1]" ng-style="{'color': poster.hightlightIndex == 1 ? '#ff0604' : 'inherit'}")
               br
-              span(ng-bind="poster.exprs[2]")
+              span(ng-bind="poster.exprs[2]" ng-style="{'color': poster.hightlightIndex == 2 ? '#ff0604' : 'inherit'}")
 
   .row
     .col-xs-6
@@ -45,15 +45,12 @@
         .form-group
           label 姓名
           input.form-control(ga type="text" ng-model="poster.name" required)
-        .form-group
-          label 經歷1 (紅字)
-          input.form-control(ga type="text" ng-model="poster.exprs[0]" required)
-        .form-group
-          label 經歷2
-          input.form-control(ga type="text" ng-model="poster.exprs[1]")
-        .form-group
-          label 經歷3
-          input.form-control(ga type="text" ng-model="poster.exprs[2]")
+        .form-group(ng-repeat="expr in poster.exprs")
+          label
+            | 經歷{{$index+1}}
+            input(ga type="radio" ng-model="poster.hightlightIndex" ng-value="$index")
+            | (標為紅字)
+          input.form-control(ga type="text" ng-model="poster.exprs[$index]")
         .form-group
           label 地點
           input.form-control(ga type="text" ng-model="poster.location" required)
