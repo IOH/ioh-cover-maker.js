@@ -30,23 +30,16 @@ $preview-height: 1080px;
 $content-text-height: 860px;
 
 #preview-container {
-
   $padding: 60px;
 
+  height: $preview-height + 2 * $padding;
   padding: $padding;
-  margin-bottom: 20px;
-  @include size($preview-width + 2 * $padding, $preview-height + 2 * $padding);
-  margin-left: -($preview-width / 4);
-
-  background-image: url('/index/bg.png');
-  background-repeat: no-repeat;
-  background-position: center;
   position: relative;
-
-
   #preview {
     @include size($preview-width, $preview-height);
-    position: relative;
+    position: absolute;
+    margin-left: -($preview-width/4) + $padding/2;
+
     font-family: AdobeFanHeitiStd;
 
     * > { overflow: hidden; }

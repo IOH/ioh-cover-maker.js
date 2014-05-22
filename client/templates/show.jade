@@ -6,28 +6,26 @@
       li 於左下角填寫基本資料
       li 存檔後寄給工作人員!
 
-  .row
-    .col-xs-12
-      #preview-container
-        #preview(html2canvas="preview")
-          #content-text(ng-style="{'background-image': 'url(' + poster.cover + ')'}")
-            .text-left
-              p(ng-bind="poster.brief")
-              img.avatar(ng-show="poster.useAvatar" ng-src="{{ poster.avatar }}")
-              p(ng-style="{'color':poster.useColor}")
-                | 地點 : 
-                span(ng-bind="poster.location" ng-style="{'color':poster.useColor}")
+  #preview-container
+    #preview(html2canvas="preview")
+      #content-text(ng-style="{'background-image': 'url(' + poster.cover + ')'}")
+        .text-left
+          p(ng-bind="poster.brief")
+          img.avatar(ng-show="poster.useAvatar" ng-src="{{ poster.avatar }}")
+          p(ng-style="{'color':poster.useColor}")
+            | 地點 : 
+            span(ng-bind="poster.location" ng-style="{'color':poster.useColor}")
 
-          #content-header
-            img.img-responsive(src="/index/ioh_brand.png" alt="IOH")
-            .text-right
-              span(ng-bind="poster.name")
-              br
-              span(ng-bind="poster.exprs[0]" ng-style="{'color': poster.hightlightIndex == 0 ? '#ff0604' : 'inherit'}")
-              br
-              span(ng-bind="poster.exprs[1]" ng-style="{'color': poster.hightlightIndex == 1 ? '#ff0604' : 'inherit'}")
-              br
-              span(ng-bind="poster.exprs[2]" ng-style="{'color': poster.hightlightIndex == 2 ? '#ff0604' : 'inherit'}")
+      #content-header
+        img.img-responsive(src="/index/ioh_brand.png" alt="IOH")
+        .text-right
+          span(ng-bind="poster.name")
+          br
+          span(ng-bind="poster.exprs[0]" ng-style="{'color': poster.hightlightIndex == 0 ? '#ff0604' : 'inherit'}")
+          br
+          span(ng-bind="poster.exprs[1]" ng-style="{'color': poster.hightlightIndex == 1 ? '#ff0604' : 'inherit'}")
+          br
+          span(ng-bind="poster.exprs[2]" ng-style="{'color': poster.hightlightIndex == 2 ? '#ff0604' : 'inherit'}")
 
   .row
     .col-xs-6
