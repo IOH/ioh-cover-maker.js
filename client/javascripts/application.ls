@@ -66,7 +66,6 @@ angular.module 'application' <[
   !(@$scope, @$state, @Poster) ->
 
     $scope.poster = new Poster do
-      name: '莊智超 Chih-chao Chuang'
       location: 'MIT Media Lab'
       brief: '''希望提供一個跨國、跨領域的公開經驗交流分享平台，
       邀請在海外讀書工作的學子，當台灣同學的耳與目，以影片與文字的方式，

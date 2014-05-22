@@ -5,16 +5,18 @@
       .form-group
         label 姓名
         | 
-        input.form-control(ga type="text" ng-model="poster.name" required)
+        input.form-control(ga type="text" ng-model="poster.name"
+          required placeholder="海報建立後還可修改喲")
       | 
       button.btn.btn-primary(ga type="submit") 製作海報 GO！
+      p.help-inline 填入講者姓名，可即時搜尋已建立好的海報！
 
   .row
     h2
       | 或是從已經建立好的列表挑選
       small  ({{posters.length}})
     ul.media-list
-      li.media(ng-repeat="poster in posters")
+      li.media(ng-repeat="poster in posters | filter:poster.name track by poster.id")
         a.pull-left(ga ui-sref="Poster.ShowWithName(poster)")
           img.media-object(ng-src="{{ poster.avatar }}" ng-attr-alt="{{ poster.name }}")
         .media-body
