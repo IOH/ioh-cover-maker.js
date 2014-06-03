@@ -1,29 +1,11 @@
 {
-  "name": "FileSaver.js",
-  "main": "FileSaver.js",
+  "name": "FileSaver",
   "homepage": "https://github.com/eligrey/FileSaver.js",
-  "authors": [
-    "Eli Grey <me@eligrey.com>"
-  ],
-  "description": "A saveAs() FileSaver implementation",
-  "keywords": [
-    "filesaver",
-    "saveas",
-    "blob"
-  ],
-  "license": "MIT/X11",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "_release": "365e9729ec",
+  "_release": "b8054a26d1",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "365e9729ec892720422f07cf8c42f28357bdb0d6"
+    "commit": "b8054a26d13dd700a948735fc05e952c3b7db6c5"
   },
   "_source": "git://github.com/eligrey/FileSaver.js.git",
   "_target": "*",
