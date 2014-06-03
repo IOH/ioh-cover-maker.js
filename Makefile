@@ -1,5 +1,5 @@
 bin           := ./node_modules/.bin
-gulp					:= $(bin)/gulp --require LiveScript --cwd ./
+gulp					:= $(bin)/gulp --cwd ./
 
 releaseBranch := gh-pages
 developBranch := master
