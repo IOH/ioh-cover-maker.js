@@ -39,7 +39,7 @@
     "express-promise": "^0.1.9",
     "newrelic": "^1.4.0",
     "highlight.js": "^8.0.0",
-    "gulp": "^3.5.2",
+    "gulp": "^3.7.0",
     "gulp-livescript": "^0.2.0",
     "gulp-uglify": "^0.2.1",
     "gulp-angular-templatecache": "^1.1.0",
