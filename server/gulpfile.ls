@@ -11,6 +11,6 @@ gulp.task 'server' <[ client ]> ->
 
   require('gulp-nodemon') do
     script: './server/index.ls'
-    execMap: ls: 'lsc'
+    execMap: ls: 'node_modules/.bin/lsc'
     ignore: './tmp/**'
 

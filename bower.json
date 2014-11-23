@@ -34,7 +34,7 @@
     "angular-bootstrap": "~0.10.0",
     "angular-ga": "~0.1.0",
     "angular-resource": "~1.2.14",
-    "ng-form-data": "~0.0.1",
+    "ng-form-data": "git@github.com:IOH/ng-form-data.git#master",
     "blueimp-canvas-to-blob": "~2.1.0",
     "FileSaver": "*",
     "angular-loading-bar": "~0.4.0",

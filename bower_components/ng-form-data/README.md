@@ -1,15 +1,9 @@
-# ng-form-data
+# ng-form-data [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][coveralls-image]][coveralls-url] [![Dependencies][gemnasium-image]][gemnasium-url]
 > Distributed via
 
-[![Version     ](https://img.shields.io/gem/v/ng-form-data.svg)                               ](https://rubygems.org/gems/ng-form-data)
-[![Bower version](https://badge.fury.io/bo/ng-form-data.png)](https://badge.fury.io/bo/ng-form-data)
+[![Version][gem-image]][gem-url] [![Bower version][bower-image]][bower-url]
 
-> Boilerplate for AngularJS module by Tom Chen
-
-[![Travis CI   ](https://img.shields.io/travis/tomchentw/ng-form-data/master.svg)             ](https://travis-ci.org/tomchentw/ng-form-data)
-[![Quality     ](https://img.shields.io/codeclimate/github/tomchentw/ng-form-data.svg)        ](https://codeclimate.com/github/tomchentw/ng-form-data)
-[![Coverage    ](https://img.shields.io/coveralls/tomchentw/ng-form-data.svg)                 ](https://coveralls.io/r/tomchentw/ng-form-data)
-[![Dependencies](https://img.shields.io/gemnasium/tomchentw/ng-form-data.svg)                 ](https://gemnasium.com/tomchentw/ng-form-data)
+> Support input[type="file"] with ng-model and transparently submit with HTML5 FormData
 
 
 ## Project philosophy
@@ -30,6 +24,7 @@ Then include them through script tag in your HTML.
 ### **Rails** projects (Only support 3.1+)
 
 Add this line to your application's Gemfile:
+
 ```ruby
 gem 'ng-form-data'
 ```
@@ -46,10 +41,10 @@ Then add these lines to the top of your `app/assets/javascripts/application.js` 
 ```
 
 And include in your `angular` module definition:
-    
-    /* 'tomchentw.boilerplate' module.
-     */    
-    var module = angular.module('my-awesome-project', ['tomchentw.boilerplate']).
+
+```javascript
+var module = angular.module('my-awesome-project', ['tomchentw.boilerplate']).
+```
 
 
 ## Usage
@@ -64,3 +59,20 @@ And include in your `angular` module definition:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+[gem-image]: https://img.shields.io/gem/v/ng-form-data.svg
+[gem-url]: https://rubygems.org/gems/ng-form-data
+[bower-image]: https://badge.fury.io/bo/ng-form-data.svg
+[bower-url]: https://badge.fury.io/bo/ng-form-data
+
+[travis-image]: https://travis-ci.org/tomchentw/ng-form-data.svg?branch=master
+[travis-url]: https://travis-ci.org/tomchentw/ng-form-data
+[codeclimate-image]: https://img.shields.io/codeclimate/github/tomchentw/ng-form-data.svg
+[codeclimate-url]: https://codeclimate.com/github/tomchentw/ng-form-data
+[coveralls-image]: https://img.shields.io/coveralls/tomchentw/ng-form-data.svg
+[coveralls-url]: https://coveralls.io/r/tomchentw/ng-form-data
+[gemnasium-image]: https://gemnasium.com/tomchentw/ng-form-data.svg
+[gemnasium-url]: https://gemnasium.com/tomchentw/ng-form-data
+[david-dm-image]: https://david-dm.org/tomchentw/ng-form-data/dev-status.svg?theme=shields.io
+[david-dm-url]: https://david-dm.org/tomchentw/ng-form-data#info=devDependencies

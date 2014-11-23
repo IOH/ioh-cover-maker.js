@@ -1,6 +1,5 @@
 {
   "name": "ng-form-data",
-  "version": "0.0.1",
   "authors": [
     "tomchentw <developer@tomchentw.com>"
   ],
@@ -21,8 +20,8 @@
   "private": false,
   "ignore": [
     "**/.*",
-    "app",
     "bower_components",
+    "client",
     "config",
     "lib",
     "node_modules",
@@ -44,19 +43,19 @@
     "angular": "~1.2.13"
   },
   "devDependencies": {
-    "angular-sanitize": "~1.2.13",
     "angular-mocks": "~1.2.13",
-    "google-code-prettify": "~1.0.1",
     "angular-bootstrap": "~0.10.0",
+    "angular-ga": "~0.1.0",
+    "angular-loading-bar": "~0.4.0",
     "twbs-bootstrap-sass": "~3.1.1"
   },
-  "_release": "0.0.1",
+  "_release": "dfc7c5c192",
   "_resolution": {
-    "type": "version",
-    "tag": "v0.0.1",
-    "commit": "ca134942e813cb8f10fa2f03ec4321f6f61aceda"
+    "type": "branch",
+    "branch": "master",
+    "commit": "dfc7c5c1925157462d8fc121f78db0b99450b495"
   },
-  "_source": "git://github.com/tomchentw/ng-form-data.git",
-  "_target": "~0.0.1",
-  "_originalSource": "ng-form-data"
+  "_source": "git@github.com:IOH/ng-form-data.git",
+  "_target": "master",
+  "_originalSource": "git@github.com:IOH/ng-form-data.git"
 }
